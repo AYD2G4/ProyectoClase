@@ -9,9 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" media="screen">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -24,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -75,11 +72,9 @@
             </div>
         </nav>
 
-          <div class="container">
-            <main class="py-4">
-                    @yield('content')
-                </main>
-         </div>
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
 </body>
 </html>
