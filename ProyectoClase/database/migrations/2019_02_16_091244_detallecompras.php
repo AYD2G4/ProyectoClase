@@ -13,7 +13,12 @@ class Detallecompras extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('detallecompra', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('compra_id')->unsigned();//
+            $table->integer('boleto_id')->unsigned();//
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class Detallecompras extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('detallecompra');
     }
 }

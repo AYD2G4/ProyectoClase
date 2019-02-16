@@ -13,7 +13,14 @@ class Reservacions extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('reservacion', function (Blueprint $table) {
+            $table->increments('id');
+            $table->dateTime('fechahora');
+            $table->integer('estado')->unsigned();//
+            $table->integer('cliente_id')->unsigned();//
+            $table->integer('registrovuelo_id')->unsigned();//
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class Reservacions extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('reservacion');
     }
 }
