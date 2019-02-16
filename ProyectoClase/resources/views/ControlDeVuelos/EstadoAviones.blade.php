@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid">
+<a href="/ControlDeVuelos"><button class="btn-warning btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Menu Control de Vuelos</button></a><br>
 	<center>	<p class="lead">  ESTADO DE AVIONES </p></center>
 	<div class="col-xs-12">
       <div class="table-responsive">

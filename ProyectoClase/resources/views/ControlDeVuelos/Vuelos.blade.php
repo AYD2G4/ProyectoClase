@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <!-- Content page -->
+<a href="/ControlDeVuelos"><button class="btn-warning btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Menu Control de Vuelos</button></a><br>
 <div class="container-fluid">
     <center>	
 		<p class="lead">
