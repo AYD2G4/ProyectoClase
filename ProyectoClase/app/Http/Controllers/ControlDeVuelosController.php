@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class ControlDeVuelosController extends Controller
 {
     public function menu(){

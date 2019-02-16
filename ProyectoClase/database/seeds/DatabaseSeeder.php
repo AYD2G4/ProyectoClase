@@ -11,6 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+    /*    Eloquent::unguard();
+        $this->command->info('User table seeded!');
+
+        $path = 'app/scriptdeLlenadoTemporal.sql';
+        DB::unprepared(file_get_contents($path));
+        $this->command->info('Country table seeded!');*/
     }
 }

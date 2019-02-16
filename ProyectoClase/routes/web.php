@@ -20,6 +20,12 @@ Route::get('/estadoAviones','ControlDeVuelosController@estadoAviones');
 Route::get('/definirRuta','ControlDeVuelosController@RegistrodeVuelos');
 Auth::routes();
 
+
+//------------ Rutas de la reservacion de boletos --------------
+
+
+//----------------------------------------------------------
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
