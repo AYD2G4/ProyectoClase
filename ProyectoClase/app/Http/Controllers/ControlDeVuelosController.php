@@ -15,8 +15,11 @@ class ControlDeVuelosController extends Controller
     public function menu(){
         return view('ControlDeVuelos.ControlDeVuelos');
     }
+    //Obtener la informacion de los aviones
     public function estadoAviones(){
-        return view('ControlDeVuelos.EstadoAviones');
+        $aviones=$this->ObtenerAvionesBD();//Obtengo el arreglo de aviones
+        return view('ControlDeVuelos.EstadoAviones')//devuelvo la vista
+        ->with("aviones", $aviones);//con el arreglo
     }
 
     public function RegistrodeVuelos(){
@@ -72,4 +75,10 @@ class ControlDeVuelosController extends Controller
     }
 
 
+    //funcion que devuelve toda la informacion de los aviones de la BD
+    public function ObtenerAvionesBD(){
+        $aviones=DB::table('avion')
+                ->get();
+        return $aviones;
+    }
 }
