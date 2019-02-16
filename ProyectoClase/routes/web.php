@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/ControlDeVuelos','ControlDeVuelosController@menu');
 Route::get('/estadoAviones','ControlDeVuelosController@estadoAviones');
-Route::get('/definirRuta','ControlDeVuelosController@definirRuta');
+Route::get('/definirRuta','ControlDeVuelosController@RegistrodeVuelos');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -12,7 +12,7 @@ class ControlDeVuelosController extends Controller
     public function estadoAviones(){
         return view('ControlDeVuelos.EstadoAviones');
     }
-    public function definirRuta(){
-        return view('ControlDeVuelos.EstadoAviones');
+    public function RegistrodeVuelos(){
+        return view('ControlDeVuelos.RegistroDeVuelos');
     }
 }
