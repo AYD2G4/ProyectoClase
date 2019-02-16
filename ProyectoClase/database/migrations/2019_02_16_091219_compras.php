@@ -13,7 +13,12 @@ class Compras extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('compra', function (Blueprint $table) {
+            $table->increments('id');
+            $table->dateTime('fechahora');
+            $table->integer('cliente_id')->unsigned();//
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class Compras extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('compra');
     }
 }
