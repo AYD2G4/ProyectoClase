@@ -13,6 +13,12 @@ class ControlDeVuelosController extends Controller
         return view('ControlDeVuelos.EstadoAviones');
     }
     public function RegistrodeVuelos(){
-        return view('ControlDeVuelos.RegistroDeVuelos');
+        $Aeropuertos=DB::table('aeropuerto as A')->get();
+        /**
+         * retorno de la vista Registro de Vuelos
+         * 
+         * return view('CrearGrupo.GruposCreados')->with("Aeropuertos",$Aeropuertos)->with("contador",0);                
+        **/
+        return view('ControlDeVuelos.RegistroDeVuelos')->with("Aeropuertos",$Aeropuertos);
     }
 }
