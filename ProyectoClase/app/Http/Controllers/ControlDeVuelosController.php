@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Aeropuerto;
+use App\Avion;
+use DB;
 
 class ControlDeVuelosController extends Controller
 {
@@ -12,13 +15,15 @@ class ControlDeVuelosController extends Controller
     public function estadoAviones(){
         return view('ControlDeVuelos.EstadoAviones');
     }
+
     public function RegistrodeVuelos(){
         $Aeropuertos=DB::table('aeropuerto as A')->get();
+        $Aviones=DB::table('avion as Av')->get();
         /**
          * retorno de la vista Registro de Vuelos
          * 
          * return view('CrearGrupo.GruposCreados')->with("Aeropuertos",$Aeropuertos)->with("contador",0);                
         **/
-        return view('ControlDeVuelos.RegistroDeVuelos')->with("Aeropuertos",$Aeropuertos);
+        return view('ControlDeVuelos.RegistroDeVuelos')->with("Aeropuertos",$Aeropuertos)->with("Aviones",$Aviones);
     }
 }
