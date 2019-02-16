@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/ControlDeVuelos','ControlDeVuelosController@vista');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
