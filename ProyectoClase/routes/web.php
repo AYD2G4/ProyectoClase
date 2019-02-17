@@ -17,7 +17,12 @@ Route::get('/', function () {
 
 Route::get('/ControlDeVuelos','ControlDeVuelosController@menu');
 Route::get('/estadoAviones','ControlDeVuelosController@estadoAviones');
-Route::get('/definirRuta','ControlDeVuelosController@RegistrodeVuelos');
+Route::get('/vuelos','ControlDeVuelosController@Vuelos');
+Route::post('/vuelos', 'ControlDeVuelosController@VuelosGuardar');
+Route::get('/registroDeVuelos','ControlDeVuelosController@RegistroDeVuelos');
+Route::post('/registroDeVuelos', 'ControlDeVuelosController@RegistroDeVuelosGuardar');
+
+
 Auth::routes();
 
 
