@@ -21,6 +21,9 @@ Route::get('/definirRuta','ControlDeVuelosController@RegistrodeVuelos');
 Auth::routes();
 
 
+
+Route::get('/CrearReservacion','ReservacionController@menu');
+
 //------------ Rutas de la reservacion de boletos --------------
 
 

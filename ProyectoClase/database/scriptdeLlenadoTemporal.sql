@@ -1,4 +1,3 @@
-use ayd2g4_proyectoclase;
 insert into aeropuerto(nombre,pais,ciudad) values  ('Aeropuerto Internacional La Aurora','Guatemala','Guatemala');
 insert into aeropuerto(nombre,pais,ciudad) values  ('Aeropuerto Internacional Mundo Maya','Guatemala','Ciudad Santa Elena de la Cruz, Flores Petén');
 insert into aeropuerto(nombre,pais,ciudad) values  ('Aeropuerto Internacional de El Salvador','La Paz','El Salvador');
