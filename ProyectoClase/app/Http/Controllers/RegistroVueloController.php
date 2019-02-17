@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Reservacion;
-class ReservacionController extends Controller
+use App\Registro_Vuelo;
+
+class RegistroVueloController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -81,39 +82,10 @@ class ReservacionController extends Controller
     {
         //
     }
-
-    /***
-     * Este metodo servira para la creacion de reservaciones
-     * por el momento en esta iteracion se trabajara con un
-     * cliente por defecto en la BD. Pero conforme se hagan
-     * mas iteraciones se pondra codigo mas general.
-     */
-    public function CrearReservacion($idRegistroVuelo)
-    {
-        $reservaciones =new Reservacion();
-        $reservaciones->fechahora =  date('Y-m-d H:i:s');
-        $reservaciones->estado = 0;
-        $reservaciones->cliente_id = 1;
-        $reservaciones->registrovuelo_id = $idRegistroVuelo;
-        $reservaciones->save();
-        return redirect('VerReservaciones');
-    }
-
-    public function QuitarReservacion($idReservacion)
-    {
-        $reservaciones =Reservacion::where('cliente_id', '1')->first();
-        $reservaciones->delete();
-        return redirect('VerReservaciones');
-    }
-
-    /**
-     * Este medo lista todas las reservaciones del usuario
-     * por defecto en la tabla de simbolos.
-     */
-    public function ListarReservaciones()
+    public function ListarRegistroVuelo()
     {
 
-        $reservaciones =Reservacion::where('cliente_id', '1')->get();
-        return view('ReservacionBoleto.VerReservaciones')->with('reservaciones', $reservaciones);
+        $reservaciones = Registro_Vuelo::get();
+        return view('Vuelo.RegistroVuelo')->with('reservaciones', $reservaciones);
     }
 }

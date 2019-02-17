@@ -22,7 +22,12 @@ Auth::routes();
 
 
 
-Route::get('/CrearReservacion','ReservacionController@menu');
+Route::get('/CrearReservacion/{idRegistroVuelo}','ReservacionController@CrearReservacion');
+Route::get('/VerReservaciones','ReservacionController@ListarReservaciones');
+Route::get('/QuitarReservacion/{idReservacion}','ReservacionController@QuitarReservacion');
+
+
+Route::get('/ListarRegistroVuelo','RegistroVueloController@ListarRegistroVuelo');
 
 //------------ Rutas de la reservacion de boletos --------------
 

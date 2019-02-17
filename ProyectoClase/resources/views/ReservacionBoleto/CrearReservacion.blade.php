@@ -8,7 +8,7 @@
 				</p>
 
 				<a href="/estadoAviones"><button class="btn-success btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>GENERAR COMPROBANTE</button></a>
-				<a href="/definirRuta"><button class="btn-danger btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>CANCELAR</button></a>
+				<a href="/ListarRegistroVuelo"><button class="btn-danger btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>CANCELAR</button></a>
 			</center>
 </div>
 @endsection

@@ -4,73 +4,30 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">Type</th>
-      <th scope="col">Column heading</th>
-      <th scope="col">Column heading</th>
-      <th scope="col">Column heading</th>
+      <th scope="col">Fecha Salida</th>
+      <th scope="col">Hora Salida</th>
+      <th scope="col">Fecha Llegada</th>
+      <th scope="col">Hora Llegada</th>
+      <th scope="col">Vuelo</th>
+      <th scope="col">Avion</th>
+      <th scope="col">Accion</th>
+
     </tr>
   </thead>
   <tbody>
-    <tr class="table-active">
-      <th scope="row">Active</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr>
-      <th scope="row">Default</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-primary">
-      <th scope="row">Primary</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-secondary">
-      <th scope="row">Secondary</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-success">
-      <th scope="row">Success</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-danger">
-      <th scope="row">Danger</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-warning">
-      <th scope="row">Warning</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">Info</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-light">
-      <th scope="row">Light</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-dark">
-      <th scope="row">Dark</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
+  @foreach($reservaciones as $reserv)
+  <tr class="table-info">
+      <th scope="row">{{$reserv->fechasalida}}</th>
+      <td>{{$reserv->horasalida}}</td>
+      <th scope="row">{{$reserv->fechallegada}}</th>
+      <td>{{$reserv->horallegada}}</td>
+    <td>{{ $reserv->vuelo }}</td>
+    <td>{{ $reserv->avion }}</td>
+    <td>
+    <a href="/CrearReservacion/{{$reserv->id}}"><button class="btn-warning btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Verificar Disponibilidad</button></a>
+	 </td>
+  </tr>
+@endforeach
   </tbody>
-</table> 
+</table>
 @endsection
