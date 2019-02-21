@@ -14,14 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//Control de vuelos
 Route::get('/ControlDeVuelos','ControlDeVuelosController@menu');
 Route::get('/estadoAviones','ControlDeVuelosController@estadoAviones');
 Route::get('/vuelos','ControlDeVuelosController@Vuelos');
 Route::post('/vuelos', 'ControlDeVuelosController@VuelosGuardar');
 Route::get('/registroDeVuelos','ControlDeVuelosController@RegistroDeVuelos');
 Route::post('/registroDeVuelos', 'ControlDeVuelosController@RegistroDeVuelosGuardar');
-
+//Pago con tarjeta
+Route::get('/PagoConTarjeta','PagoTarjetaController@ventana');
 
 Auth::routes();
 
