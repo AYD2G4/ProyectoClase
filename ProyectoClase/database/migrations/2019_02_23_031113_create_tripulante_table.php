@@ -15,6 +15,7 @@ class CreateTripulanteTable extends Migration
     {
         Schema::create('tripulante', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('empleado_id')->unsigned();
             $table->timestamps();
         });
     }
