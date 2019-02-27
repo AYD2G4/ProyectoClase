@@ -3,11 +3,11 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-class DetalleCompraAuxiliar extends TestCase
+class DetalleCompraTest extends TestCase
 {
     /**
      * ARCHIVO DE PRUEBAS UNITARIAS EXLUSIVO
-     * PARA LA VISTA DE DetalleCompraAuxiliar----
+     * PARA LA VISTA DE DetalleCompraTest----
      *
      *
      * Primer prueba unitaria en metodología TDD
@@ -16,7 +16,7 @@ class DetalleCompraAuxiliar extends TestCase
      * Test1: Lista los detalles de una compra especifca
      *
      */
-    public function testVistaListarDetalleCompraAuxiliar(){
+    public function testVistaListarDetalleCompra(){
         $response = $this->call('POST', '/login', [
         'email' => 'aydusacg4@gmail.com',
         'password' => '@123Password',
@@ -35,7 +35,7 @@ class DetalleCompraAuxiliar extends TestCase
     /***
      * Test 2: guardar Detalle compra
      */
-    public function testGuardarDetalleCompraAuxiliar()
+    public function testGuardarDetalleCompra()
     {
         $response = $this->call('POST', '/login', [
             'email' => 'aydusacg4@gmail.com',
