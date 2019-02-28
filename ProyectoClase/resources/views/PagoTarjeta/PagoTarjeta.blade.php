@@ -7,6 +7,10 @@
 	<form  method="post">
 	@csrf
 	<input id="Nombre" type="text" name="Nombre">
+	<input id="Nombre" type="text" name="Tarjeta">
+	<div class="button"> 
+		<center><button type="submit">Procesar</button></center>
+	</div>  
 	</form>
 	</div>		
 		
