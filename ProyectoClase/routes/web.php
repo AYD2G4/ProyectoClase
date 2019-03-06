@@ -23,6 +23,9 @@ Route::get('/registroDeVuelos','ControlDeVuelosController@RegistroDeVuelos');
 Route::post('/registroDeVuelos', 'ControlDeVuelosController@RegistroDeVuelosGuardar');
 
 
+Route::get('/manejoDeHorarios','ManejoDeHorariosController@ManejoDeHorarios');
+
+
 Auth::routes();
 
 

@@ -12,7 +12,7 @@ class ManejoHorariosTest extends TestCase
      * Prueba creada para probar si esta retornando correctamente la vista /ManjeoHorario
      */
     public function testManejoHorario(){
-        $response = $this->get('/ManejoHorario');
+        $response = $this->get('/manejoDeHorarios');
         $this->assertEquals(200, $response->getStatusCode());
     }
     

@@ -12,7 +12,7 @@ class ManejoHorariosTest extends TestCase
      * Prueba creada para probar la respueta de la base de datos de la tabla: registro_vuelo
      * y la columna: fechasalida
      */
-    public function testCrearAeropuertoDB()
+    public function testManejoHorarioDB()
     {
         $this->assertDatabaseHas('registro_vuelo', [
             'fechasalida' => '2019-02-25'
