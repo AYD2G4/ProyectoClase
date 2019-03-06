@@ -47,7 +47,8 @@
 			<br/><br/>
 			<div class="button"> 
 				<center><button type="submit">Guardar</button></center>
-			</div>  
+			</div>    
+			 
 		</form>
 </div>
 @endsection
