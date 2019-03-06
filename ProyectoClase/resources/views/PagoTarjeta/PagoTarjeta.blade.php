@@ -3,6 +3,7 @@
 <div class="container-fluid">
 	<center>	<p class="lead">  Pago Con Tarjeta (Credito o Debito) </p></center>
 	<div class="container-fluid">
+	{{$mensaje}}
 		<form  method="post">
 			@csrf
 			<p class="lead">
