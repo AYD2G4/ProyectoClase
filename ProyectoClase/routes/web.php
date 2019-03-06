@@ -23,6 +23,7 @@ Route::get('/registroDeVuelos','ControlDeVuelosController@RegistroDeVuelos');
 Route::post('/registroDeVuelos', 'ControlDeVuelosController@RegistroDeVuelosGuardar');
 //Pago con tarjeta
 Route::get('/PagoConTarjeta','PagoTarjetaController@ventana');
+Route::post('/PagoConTarjeta','PagoTarjetaController@ventanaGuardar');
 
 Auth::routes();
 

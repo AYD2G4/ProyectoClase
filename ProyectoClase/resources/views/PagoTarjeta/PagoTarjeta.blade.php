@@ -1,21 +1,46 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid">
-<a href="/ControlDeVuelos"><button class="btn-warning btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Menu Control de Vuelos</button></a><br>
-	<center>	<p class="lead">  Pago Con Tarjeta </p></center>
+	<center>	<p class="lead">  Pago Con Tarjeta (Credito o Debito) </p></center>
 	<div class="container-fluid">
-	<form  method="post">
-	@csrf
-	<input id="Nombre" type="text" name="Nombre">
-	<input id="Nombre" type="text" name="Tarjeta">
-	<div class="button"> 
-		<center><button type="submit">Procesar</button></center>
-	</div>  
-	</form>
-	</div>		
-		
-				
-				
-
+		<form  method="post">
+			@csrf
+			<p class="lead">
+				Nombre: 
+				@for ($i = 1; $i <= 15; $i++) 
+					&nbsp;
+				@endfor
+				<input id="Nombre" type="text" name="Nombre" required><br>
+			</p>
+			<p class="lead">
+				Apellido:
+				@for ($i = 1; $i <= 15; $i++) 
+					&nbsp;
+				@endfor
+				<input id="Nombre" type="text" name="Apellido" required>
+			</p>
+			<p class="lead">
+				Numero de Tarjeta:
+				@for ($i = 1; $i <= 3; $i++) 
+					&nbsp;
+				@endfor
+				<input id="Nombre" type="Number" name="Tarjeta" required>
+			</p>
+			<p class="lead">
+				Fecha de vencimiento:
+				<input id="Nombre" type="text" name="Fecha" required>
+			</p>
+			<p class="lead">
+				Codigo de Seguridad:
+				@for ($i = 1; $i <= 1; $i++) 
+					&nbsp;
+				@endfor
+				<input id="Nombre" type="Number" name="Codigo" required>
+			</p>
+			<div class="button"> 
+				<center><button type="submit">Procesar</button></center>
+			</div>  
+		</form>
+	</div>			
 </div>
 @endsection
