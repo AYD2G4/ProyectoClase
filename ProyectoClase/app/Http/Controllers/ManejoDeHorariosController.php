@@ -16,7 +16,7 @@ class ManejoDeHorariosController extends Controller
     public function ManejoDeHorarios(){
         $Horarios=DB::table('registro_vuelo as V')
         ->join('avion as A', 'A.id', '=', 'V.avion')
-        ->select('V.fechasalida as fechaS', 'V.horasalida as horaS', 
+        ->select('V.id as id', 'V.fechasalida as fechaS', 'V.horasalida as horaS', 
                  'V.fechallegada as fechaL', 'V.horallegada as horaL',
                  'A.codigo as avion')->get();
        
@@ -26,5 +26,25 @@ class ManejoDeHorariosController extends Controller
         **/
         return view('ManejoHorarios.ManejoDeHorarios')->with("Horarios",$Horarios);
     }
+
+    public function Editar($id){
+        
+        $Horarios=DB::table('registro_vuelo as V')
+        ->join('avion as A', 'A.id', '=', 'V.avion')
+        ->select('V.id as id', 'V.fechasalida as fechaS', 'V.horasalida as horaS', 
+                 'V.fechallegada as fechaL', 'V.horallegada as horaL',
+                 'A.codigo as avion')
+        ->where('V.id', '=', $id)->first();
+
+        /**
+         * retorno de la vista Editor de Horarios
+         * 
+        **/
+        return view('ManejoHorarios.EditarHorario')->with("Horarios",$Horarios);
+      }
+
+
+
+
 
 }

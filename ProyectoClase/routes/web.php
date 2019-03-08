@@ -24,7 +24,7 @@ Route::post('/registroDeVuelos', 'ControlDeVuelosController@RegistroDeVuelosGuar
 
 
 Route::get('/manejoDeHorarios','ManejoDeHorariosController@ManejoDeHorarios');
-
+Route::get('/manejoDeHorarios/{id}', 'ManejoDeHorariosController@Editar');
 
 Auth::routes();
 
