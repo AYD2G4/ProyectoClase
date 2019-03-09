@@ -11,27 +11,30 @@
 		</p>
 		</center>
 		<div class="col-xs-12">
-      <div class="table-responsive">
-        <table class="table table-hover text-center">
-          <thead>
-						<tr>
-						<th style="width: 10%"> Avion </th>
-						<th style="width: 10%"> Fecha Salida </th>
-						<th style="width: 10%"> Hora Salida </th>
-						<th style="width: 10%"> Fecha Llegada </th>
-						<th style="width: 10%"> Hora Llegada </th>
-						<th style="width: 10%"> Opciones </th>
-						</tr>
-          </thead>
-				<tbody>
-				@foreach($Horarios as $elemento)
-					<tr>
-					<td> {{ $elemento->fechaS }} </td>
-					<td> {{ $elemento->horaS }} </td>
-					<td> {{ $elemento->fechaL }} </td>
-					<td> {{ $elemento->horaL }} </td>
-				<tr>
-				@endforeach
+		@foreach($Horarios as $elemento)
+		<center>	
+		<p class="lead">{{ $elemento->avion }}
+		</p>
+		</center>
+		<p class="lead">
+				Fecha de salida: &nbsp;
+				<input id="FechaSalida" type="date" name="FechaSalida" value="{{ $elemento->fechaS }}">
+				Hora: &nbsp;
+				<input id="HoraSalida" type="time" name="HoraSalida" value="{{ $elemento->horaS }}">
+			</p>
+			<br/>
+			<p class="lead">
+				Fecha de Llegada: &nbsp;
+				<input id="FechaLlegada" type="date" name="FechaLlegada" value="{{ $elemento->fechaL }}">
+				Hora: &nbsp;
+				<input id="HoraLlegada" type="time" name="HoraLlegada" value="{{ $elemento->horaL }}">
+			</p>
+
+			<br/><br/>
+			<div class="button"> 
+				<center><button type="submit">Guardar</button></center>
+			</div>  
+		@endforeach
 		  </tbody>
 </div>
 

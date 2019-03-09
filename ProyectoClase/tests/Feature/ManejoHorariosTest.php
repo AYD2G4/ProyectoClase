@@ -20,8 +20,8 @@ class ManejoHorariosTest extends TestCase
     * Prueba para verificar que se puede cargar ManejoHorario
     */
     public function testMenuControlVuelos(){
-        $response = $this->get('/ControlDeVuelos');
-        $response->assertSeeText('MANEJO DE HORARIOS');
+        $response = $this->get('/manejoDeHorarios');
+        $response->assertSeeText('EDICION DE HORARIO');
     }
     
     
