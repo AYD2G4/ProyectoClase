@@ -44,3 +44,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/************* RUTAS DEL CHECK IN DE PASAJEROS  */
+
+Route::get('qr-code', function () {
+    return QrCode::size(500)->generate('Welcome to kerneldev.com!');
+});
+Route::get('/checkin/{idRegistroVuelo}','CheckInController@VerificarPasajero');
+
+/*************************************   */
