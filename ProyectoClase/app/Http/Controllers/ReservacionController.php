@@ -101,6 +101,14 @@ class ReservacionController extends Controller
      */
     public function CrearReservacion($boleto_id)
     {
+        $this->MetodoCrearReservacion($idRegistroVuelo);
+        return redirect('VerReservaciones');
+    }
+
+    /**
+     *
+     */
+    public function MetodoCrearReservacion($idRegistroVuelo){
         $reservaciones =new Reservacion();
         $reservaciones->fechahora =  date('Y-m-d H:i:s');
         $reservaciones->cliente_id = 1;
@@ -142,7 +150,13 @@ class ReservacionController extends Controller
             $boleto->save();
             $this->QuitarReservacion($boleto->id);
         }
+        $this->MetodoQuitarReservacion($idReservacion);
         return redirect('VerReservaciones');
+    }
+
+    public function MetodoQuitarReservacion($idReservacion){
+        $reservaciones =Reservacion::where('id', $idReservacion)->first();
+        $reservaciones->delete();
     }
 
     /**
@@ -169,4 +183,12 @@ class ReservacionController extends Controller
         ->with('colleccion', $colleccion);
     }
 
+    public function MetodoListarReservacionesCliente(){
+        return Reservacion::where('cliente_id', '1')->get();// En vez de usuario 1 debe ser el usuario logeado
+    }
+
+    public function MetodoObtenerReservacion($idReservacion){
+        $reservaciones =Reservacion::where('id', $idReservacion)->first();
+        return $reservaciones;
+    }
 }

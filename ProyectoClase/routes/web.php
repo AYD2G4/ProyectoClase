@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//----------------- Rutas de control de vuelos ---------------
 Route::get('/ControlDeVuelos','ControlDeVuelosController@menu');
 Route::get('/estadoAviones','ControlDeVuelosController@estadoAviones');
 Route::get('/vuelos','ControlDeVuelosController@Vuelos');
@@ -24,10 +25,9 @@ Route::post('/registroDeVuelos', 'ControlDeVuelosController@RegistroDeVuelosGuar
 
 
 Auth::routes();
+//----------------------------------------------------------------
 
-
-
-
+Route::get('/ListarRegistroVuelo','RegistroVueloController@ListarRegistroVuelo');
 
 Route::get('/ListarRegistroVuelo','RegistroVueloController@ListarRegistroVuelo');
 Route::get('/DisponibilidadRegistroVuelo','ControlDeVuelosController@menu');
