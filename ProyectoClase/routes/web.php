@@ -73,6 +73,12 @@ Route::get('/SeleccionarEmpleado/{registro_vuelo_id}/{cargo_id}', 'TripulanteCon
 Route::get('/AsignarTripulante/{registro_vuelo_id}/{cargo_id}/{idEmpleado}', 'TripulanteController@AsignarTripulante');
 Route::get('/QuitarTripulante/{registro_vuelo_id}/{idtripulante}', 'TripulanteController@QuitrarTripulante');
 //-------------------------------------------------------------------
+//------------ Rutas Avion -------------------------------------------
+Route::get('/CrearAvion', 'AvionController@VistaCrearAvion');
+Route::post('/CrearAvion', 'AvionController@VistaGuardarAvion');
+Route::get('/ListarAviones', 'AvionController@VistaListarAvion');
+Route::get('/EliminarAvion/{idAvion}', 'AvionController@VistaEliminarAvion');
+//--------------------------------------------------------------------
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();

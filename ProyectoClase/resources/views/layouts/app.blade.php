@@ -20,8 +20,9 @@
 
             @guest
             <ul class="nav navbar-nav ml-auto">
-                    <li><a class="nav-link"  href="{{ url('/ListarCargos') }}">Listar Cargo</a></li>
-                    <li><a class="nav-link"  href="{{ url('/ListarEmpleado') }}">Listar Empleado</a></li>
+                    <li><a class="nav-link"  href="{{ url('/ListarAviones') }}">Aviones</a></li>
+                    <li><a class="nav-link"  href="{{ url('/ListarCargos') }}">Cargos</a></li>
+                    <li><a class="nav-link"  href="{{ url('/ListarEmpleado') }}">Empleados</a></li>
                     <li><a class="nav-link"  href="{{ url('/ListarRegistroVuelo') }}">Listar Registro Vuelo</a></li>
                     <li><a class="nav-link"  href="{{ url('/VerReservaciones') }}">Reservaciones</a></li>
                     <li><a class="nav-link"  href="{{ url('/VerCompras') }}">Compras</a></li>
