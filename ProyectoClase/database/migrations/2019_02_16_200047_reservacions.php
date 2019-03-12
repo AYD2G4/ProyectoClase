@@ -16,9 +16,10 @@ class Reservacions extends Migration
         Schema::create('reservacion', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('fechahora');
-            $table->integer('estado')->unsigned();//
+            $table->integer('registro_vuelo_id')->unsigned();//
+            $table->integer('vuelo_id')->unsigned();//
             $table->integer('cliente_id')->unsigned();//
-            $table->integer('registrovuelo_id')->unsigned();//
+            $table->integer('boleto_id')->unsigned();//
             $table->timestamps();
         });
     }

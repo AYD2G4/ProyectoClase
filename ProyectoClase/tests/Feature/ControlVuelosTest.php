@@ -31,7 +31,6 @@ class ControlVuelosTest extends TestCase
       //  $response = $this->get('/definirRuta');
       //  $this->assertEquals(200, $response->getStatusCode());
       $response = $this->get('/');
-
-        $response->assertStatus(200);
+       $response->assertStatus(200);
     }
 }
