@@ -12,11 +12,14 @@ class Detallecompraauxiliars extends Migration
      * @return void
      */
     public function up()
-    {  
+    {
         Schema::create('detallecompraauxiliar', function (Blueprint $table) {
         $table->increments('id');
-        $table->integer('compra_id')->unsigned();//
+        $table->integer('cliente_id')->unsigned();//
         $table->integer('boleto_id')->unsigned();//
+        $table->integer('registro_vuelo_id')->unsigned();//
+        $table->integer('vuelo_id')->unsigned();//
+        $table->float('precio');
         $table->timestamps();
     });
     }

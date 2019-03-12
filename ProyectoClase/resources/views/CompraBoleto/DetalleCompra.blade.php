@@ -4,7 +4,7 @@
 <div class="container-fluid">
             <left>
 				<p class="lead">
-					 Listado de Reservaciones
+					Detalle Compra {{$compra_id}}
 				</p>
 
 <table class="table table-hover">
@@ -29,16 +29,9 @@
       <td>{{$col->AeropuertoDestino->nombre}}</td>
       <td>{{$col->RegistroVuelo->fechallegada}}</td>
       <td> {{$col->RegistroVuelo->horallegada}}</td>
-
-    <form method="POST" action="/QuitarReservacion/{{$col->RegistroVuelo->id}}">
-        {{ csrf_field() }}
         <td>
-                <input class="form-control form-control-sm" type="number" min="0" max="{{$col->CantidadBoletos}}" value="0" id="cantidad" name="cantidad">
+                <input class="form-control form-control-sm" type="number" min="0" value="{{$col->CantidadBoletos}}"  id="cantidad" name="cantidad" disabled>
         </td>
-        <td>
-        <input class="btn btn-danger btn-sm" href="" type="submit" name="TIPO" value="Quitar Boletos" >
-        </td>
-    </form>
   </tr>
 @endforeach
   </tbody>
