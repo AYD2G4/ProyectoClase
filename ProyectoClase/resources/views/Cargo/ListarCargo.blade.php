@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+<div class="container-fluid">
+
+<p class="lead">
+    LISTA CARGOS
+</p>
+
 <a href="/CrearCargo"><button class="btn-success btn-raised btn-sm" ><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>NUEVO CARGO</button></a>
 
 <table class="table table-hover">
@@ -22,5 +28,5 @@
     @endforeach
   </tbody>
 </table>
-
+</DIV>
 @endsection

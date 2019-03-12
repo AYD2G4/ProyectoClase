@@ -82,17 +82,6 @@ class ReservacionBoletoTest extends TestCase
 
 
     /**
-    * Test 5
-    * Visitar pagina Crear Reservacion
-    */
-    public function test5()
-    {
-        $response = $this->get('/CrearReservacion/1');
-        $response->assertStatus(302);
-        Reservacion::truncate();
-    }
-
-    /**
     * Test 6
     * Visitar pagina Listar Reservaciones
     */
@@ -102,16 +91,5 @@ class ReservacionBoletoTest extends TestCase
         $response->assertStatus(200);
         Reservacion::truncate();
     }
-    /**
-    * Test 7
-    * Visitar pagina eliminar reservacion.
-    */
-    public function test7()
-    {
-        $controller = new ReservacionController();
-        $reservacion = $controller->MetodoCrearReservacion(1);
-        $response = $this->get('/QuitarReservacion/'.$reservacion->id);
-        $response->assertStatus(302);
-        Reservacion::truncate();
-    }
+
 }

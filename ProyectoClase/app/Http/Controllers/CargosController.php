@@ -88,7 +88,6 @@ class CargosController extends Controller
     }
     public function VistaGuardarCargo(Request $request){
         $nombre =  $request->input('nombreCargo');
-        error_log($nombre);
         $this->MetodoCrearCargo($nombre);
         return redirect('ListarCargos');
     }

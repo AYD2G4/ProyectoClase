@@ -25,7 +25,8 @@
     <td>{{ $reserv->avion }}</td>
     <td>
     <a href="/VerDisponibilidad/{{$reserv->id}}"><button class="btn-warning btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Verificar Disponibilidad</button></a>
-	 </td>
+    <a href="/ListarTripulacion/{{$reserv->id}}"><button class="btn-primary btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Ver tripulacion</button></a>
+     </td>
   </tr>
 @endforeach
   </tbody>
