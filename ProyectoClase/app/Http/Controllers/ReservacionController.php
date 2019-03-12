@@ -101,14 +101,14 @@ class ReservacionController extends Controller
      */
     public function CrearReservacion($boleto_id)
     {
-        $this->MetodoCrearReservacion($idRegistroVuelo);
+        $this->MetodoCrearReservacion($boleto_id);
         return redirect('VerReservaciones');
     }
 
     /**
      *
      */
-    public function MetodoCrearReservacion($idRegistroVuelo){
+    public function MetodoCrearReservacion($boleto_id){
         $reservaciones =new Reservacion();
         $reservaciones->fechahora =  date('Y-m-d H:i:s');
         $reservaciones->cliente_id = 1;
@@ -117,6 +117,7 @@ class ReservacionController extends Controller
         $reservaciones->vuelo_id = $boleto->vuelo_id;
         $reservaciones->registro_vuelo_id = $boleto->registro_vuelo_id;
         $reservaciones->save();
+        return $reservaciones;
     }
 
     public function CrearCantidadReservacion($registro_vuelo_id, $cantidad){
