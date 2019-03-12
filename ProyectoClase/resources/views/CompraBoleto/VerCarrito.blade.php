@@ -4,8 +4,15 @@
 <div class="container-fluid">
             <left>
 				<p class="lead">
-					 Listado de Reservaciones
+					Carrito de Compras
 				</p>
+                <div align="right">
+                @if(count($colleccion) ==0)
+                <a href="/ProcesarCompra"><button class="btn-success btn-raised btn-sm" ><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>PROCESAR COMPRA</button></a>
+              @else
+              <a href="/ProcesarCompra"><button class="btn-success btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>PROCESAR COMPRA</button></a>
+               @endif
+                </div>
 
 <table class="table table-hover">
   <thead>
@@ -30,13 +37,13 @@
       <td>{{$col->RegistroVuelo->fechallegada}}</td>
       <td> {{$col->RegistroVuelo->horallegada}}</td>
 
-    <form method="POST" action="/QuitarReservacion/{{$col->RegistroVuelo->id}}">
-        {{ csrf_field() }}
+    <form method="POST" action="/QuitarCarrito/{{$col->RegistroVuelo->id}}">
+    {{ csrf_field() }}
         <td>
                 <input class="form-control form-control-sm" type="number" min="0" max="{{$col->CantidadBoletos}}" value="0" id="cantidad" name="cantidad">
         </td>
         <td>
-        <input class="btn btn-danger btn-sm" href="" type="submit" name="TIPO" value="Quitar Boletos" >
+        <input class="btn btn-danger btn-sm"  type="submit" name="TIPO" value="Quitar Boletos" >
         </td>
     </form>
   </tr>

@@ -20,7 +20,11 @@
 
             @guest
             <ul class="nav navbar-nav ml-auto">
-                      <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                    <li><a class="nav-link"  href="{{ url('/ListarRegistroVuelo') }}">Listar Registro Vuelo</a></li>
+                    <li><a class="nav-link"  href="{{ url('/VerReservaciones') }}">Reservaciones</a></li>
+                    <li><a class="nav-link"  href="{{ url('/VerCompras') }}">Compras</a></li>
+                    <li><a class="nav-link"  href="{{ url('/VerCarrito') }}">Carrito</a></li>
+                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     </ul>
             @else
             <ul class="navbar-nav">

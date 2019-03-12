@@ -24,7 +24,7 @@
     <td>{{ $reserv->vuelo }}</td>
     <td>{{ $reserv->avion }}</td>
     <td>
-    <a href="/CrearReservacion/{{$reserv->id}}"><button class="btn-warning btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Verificar Disponibilidad</button></a>
+    <a href="/VerDisponibilidad/{{$reserv->id}}"><button class="btn-warning btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>Verificar Disponibilidad</button></a>
 	 </td>
   </tr>
 @endforeach

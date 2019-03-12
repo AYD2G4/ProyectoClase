@@ -29,13 +29,30 @@ Auth::routes();
 
 Route::get('/ListarRegistroVuelo','RegistroVueloController@ListarRegistroVuelo');
 
-//------------ Rutas de la reservacion de boletos --------------
-Route::get('/CrearReservacion/{idRegistroVuelo}','ReservacionController@CrearReservacion');
-Route::get('/VerReservaciones','ReservacionController@ListarReservaciones');
-Route::get('/QuitarReservacion/{idReservacion}','ReservacionController@QuitarReservacion');
+Route::get('/ListarRegistroVuelo','RegistroVueloController@ListarRegistroVuelo');
+Route::get('/DisponibilidadRegistroVuelo','ControlDeVuelosController@menu');
+
+//---------- Procesar boletos --------------------------
+Route::get('/VerDisponibilidad/{registro_vuelo_id}','DetalleCompraAuxiliarController@VerificarDisponibilidad');
+Route::post('/VerDisponibilidad/{registro_vuelo_id}','DetalleCompraAuxiliarController@VerificarDisponibilidad1');
+//------------ Rutas de la Compra de boletos --------------
+//-------- Carrito -------
+Route::get('/VerCarrito','DetalleCompraAuxiliarController@ListarCompras');
+Route::post('/QuitarCarrito/{registro_vuelo_id}','DetalleCompraAuxiliarController@QuitarCantidadCarrito');
+//------------------------
+//--------- Procesar compra y vaciar carrito ----------
+Route::get('/ProcesarCompra','CompraController@ProcesarCompra');
+Route::get('/VerCompras','CompraController@ListarCompras');
+Route::get('/ListarDetalleCompra/{compra_id}','CompraController@ListarDetalleCompra');
+
+//------------------------------------------------------
 //----------------------------------------------------------
-
-
+//----------- Reservaciones
+Route::get('/VerReservaciones','ReservacionController@ListarReservaciones');
+Route::post('/QuitarReservacion/{registro_vuelo_id}','ReservacionController@QuitarCantidadReservacion');
+//-----------------------------------------------------------------
+Route::get('/CrearBoletosAvion/{registro_vuelo_id}/{cantidad}','RegistroVueloController@GenerarBoletosAvion');
+//----------------------------------------------------------------
 
 Route::get('/home', 'HomeController@index')->name('home');
 
