@@ -90,20 +90,32 @@ class ReservacionController extends Controller
      */
     public function CrearReservacion($idRegistroVuelo)
     {
+        $this->MetodoCrearReservacion($idRegistroVuelo);
+        return redirect('VerReservaciones');
+    }
+
+    /**
+     *
+     */
+    public function MetodoCrearReservacion($idRegistroVuelo){
         $reservaciones =new Reservacion();
         $reservaciones->fechahora =  date('Y-m-d H:i:s');
         $reservaciones->estado = 0;
-        $reservaciones->cliente_id = 1;
+        $reservaciones->cliente_id = 1;//El cliente 1 hay que cambiarlo por el id del cliente logeado
         $reservaciones->registrovuelo_id = $idRegistroVuelo;
         $reservaciones->save();
-        return redirect('VerReservaciones');
+        return $reservaciones;
     }
 
     public function QuitarReservacion($idReservacion)
     {
-        $reservaciones =Reservacion::where('cliente_id', '1')->first();
-        $reservaciones->delete();
+        $this->MetodoQuitarReservacion($idReservacion);
         return redirect('VerReservaciones');
+    }
+
+    public function MetodoQuitarReservacion($idReservacion){
+        $reservaciones =Reservacion::where('id', $idReservacion)->first();
+        $reservaciones->delete();
     }
 
     /**
@@ -112,8 +124,16 @@ class ReservacionController extends Controller
      */
     public function ListarReservaciones()
     {
-
-        $reservaciones =Reservacion::where('cliente_id', '1')->get();
+        $reservaciones =$this->MetodoListarReservacionesCliente();
         return view('ReservacionBoleto.VerReservaciones')->with('reservaciones', $reservaciones);
+    }
+
+    public function MetodoListarReservacionesCliente(){
+        return Reservacion::where('cliente_id', '1')->get();// En vez de usuario 1 debe ser el usuario logeado
+    }
+
+    public function MetodoObtenerReservacion($idReservacion){
+        $reservaciones =Reservacion::where('id', $idReservacion)->first();
+        return $reservaciones;
     }
 }
