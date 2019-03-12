@@ -25,7 +25,8 @@ INSERT INTO `cliente` (`id`, `nombre`, `apellido`, `dpi`, `created_at`, `updated
 INSERT INTO `registro_vuelo` (`id`, `fechasalida`, `horasalida`, `fechallegada`, `horallegada`, `vuelo`, `avion`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-16', '08:00:00', '2019-02-16', '13:00:00', '3', '1', '2019-02-16 00:00:00', '2019-02-16 00:00:00');
 INSERT INTO `registro_vuelo` (`id`, `fechasalida`, `horasalida`, `fechallegada`, `horallegada`, `vuelo`, `avion`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-17', '05:00:00', '2019-02-17', '10:00:00', '1', '2', '2019-02-16 00:00:00', '2019-02-16 00:00:00');
 INSERT INTO `registro_vuelo` (`id`, `fechasalida`, `horasalida`, `fechallegada`, `horallegada`, `vuelo`, `avion`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-17', '08:00:00', '2019-02-16', '11:00:00', '2', '3', '2019-02-16 00:00:00', '2019-02-16 00:00:00');
-
+/**
 INSERT INTO `reservacion` (`id`, `fechahora`, `estado`, `cliente_id`, `registrovuelo_id`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-15 00:00:00', '0', '1', '1', '2019-02-15 00:00:00', '2019-02-15 00:00:00');
 INSERT INTO `reservacion` (`id`, `fechahora`, `estado`, `cliente_id`, `registrovuelo_id`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-15 00:00:00', '0', '1', '2', '2019-02-15 00:00:00', '2019-02-15 00:00:00');
 INSERT INTO `reservacion` (`id`, `fechahora`, `estado`, `cliente_id`, `registrovuelo_id`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-15 00:00:00', '0', '1', '3', '2019-02-15 00:00:00', '2019-02-15 00:00:00');
+**/

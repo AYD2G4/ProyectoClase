@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cargos;
 
 class CargosController extends Controller
 {
@@ -80,5 +81,40 @@ class CargosController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function VistaCrearCargo(){
+        return view('Cargo.CrearCargo');
+    }
+    public function VistaGuardarCargo(Request $request){
+        $nombre =  $request->input('nombreCargo');
+        error_log($nombre);
+        $this->MetodoCrearCargo($nombre);
+        return redirect('ListarCargos');
+    }
+
+    public function VistaListarCargo(){
+        return view('Cargo.ListarCargo')
+            ->with('colleccion',Cargos::get());
+    }
+
+    public function MetodoCrearCargo($nombreCargo){
+        $cargo = new Cargos();
+        $cargo->nombrecargo = $nombreCargo;
+        $cargo->save();
+        return $cargo;
+    }
+
+    public function VistaEliminarCargo($idCargo){
+        $this->MetodoEliminarCargo($idCargo);
+        return redirect('ListarCargos');
+    }
+
+    public function MetodoObtenerCargo($idCargo){
+        return Cargos::where('id',$idCargo)->first();
+    }
+
+    public function MetodoEliminarCargo($idCargo){
+        Cargos::where('id',$idCargo)->first()->delete();
     }
 }

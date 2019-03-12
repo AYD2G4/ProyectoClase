@@ -5,41 +5,36 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Http\Controllers\CargosController;
+use App\Cargos;
 
 class CargoTest extends TestCase
 {
 
 
-    public function testCargoGet(){
-    }
-    public function testCrearCargoGet(){
-    }
-    public function testCrearCargoPost(){
-    }
-    public function testEliminarCargoGet(){
-    }
-    /**
-     * ARCHIVO DE PRUEBAS UNITARIAS EXLUSIVO
-     * PARA LA VISTA DE CargoTest----
-     *
-     *
-     *
-     *
-     *Test1: Prueba que lista las Cargos realizadas por un cliente
-     *
-     */
-    public function testVistaListarCargo(){
-        $response = $this->call('POST', '/login', [
-        'email' => 'aydusacg4@gmail.com',
-        'password' => '@123Password',
-        '_token' => csrf_token()
-        ]);
-    //Crear Cargo
-    //Agregar Cargo
-    //Listar Cargo
-    //Borrar Cargo
-    $response = $this->get('/ListarDetalleCargo/'.$Cargo_id);
-        $this->assertEquals(200, $response->getStatusCode());
+    public function testCrearCargo(){
+        $controller = new CargosController();
+        $cargo=$controller->MetodoCrearCargo("Cargo1");
+        $this->assertNotNull($cargo);
+        $cargo->delete();
     }
 
+    public function testEliminarCargo(){
+        $controller = new CargosController();
+        $cargo= $controller->MetodoCrearCargo("Cargo1");
+        $idCargo = $cargo->id;
+        $controller->MetodoEliminarCargo($idCargo);
+        $cargo1 =$controller->MetodoObtenerCargo($idCargo);
+        $this->assertNull($cargo1);
+    }
+
+    public function testVistaCrearCargo(){
+        $response = $this->get('/CrearCargo');
+        $response->assertStatus(200);
+    }
+
+    public function testVistaElminarCargo(){
+        $response = $this->get('/ListarCargos');
+        $response->assertStatus(200);
+    }
 }

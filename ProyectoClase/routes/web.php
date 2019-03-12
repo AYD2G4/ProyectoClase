@@ -39,6 +39,13 @@ Route::get('/ListarRegistroVuelo','RegistroVueloController@ListarRegistroVuelo')
 
 //----------------------------------------------------------
 
+//------------- Rutas Cargo ----------------------------
+Route::get('/CrearCargo', 'CargosController@VistaCrearCargo');
+Route::post('/CrearCargo', 'CargosController@VistaGuardarCargo');
+Route::get('/ListarCargos', 'CargosController@VistaListarCargo');
+Route::get('/ElminarCargo/{idCargo}', 'CargosController@VistaEliminarCargo');
+//-------------------------------------------------------
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
