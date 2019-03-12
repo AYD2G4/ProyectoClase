@@ -61,6 +61,18 @@ Route::get('/ListarCargos', 'CargosController@VistaListarCargo');
 Route::get('/ElminarCargo/{idCargo}', 'CargosController@VistaEliminarCargo');
 //-------------------------------------------------------
 
+//------------- Rutas Empleado -----------------------------
+Route::get('/CrearEmpleado', 'EmpleadoController@VistaCrearEmpleado');
+Route::post('/CrearEmpleado', 'EmpleadoController@VistaGuardarEmpleado');
+Route::get('/ListarEmpleado', 'EmpleadoController@VistaListarEmpleado');
+Route::get('/EliminarEmpleado/{idEmpleado}', 'EmpleadoController@VistaEliminarEmpleado');
+//----------------------------------------------------------
+//------------ Rutas Tripulacion --------------------------------------
+Route::get('/ListarTripulacion/{registro_vuelo_id}', 'TripulanteController@VistaListarTripulacion');
+Route::get('/SeleccionarEmpleado/{registro_vuelo_id}/{cargo_id}', 'TripulanteController@VistaListarEmpleadoSeleccionar');
+Route::get('/AsignarTripulante/{registro_vuelo_id}/{cargo_id}/{idEmpleado}', 'TripulanteController@AsignarTripulante');
+Route::get('/QuitarTripulante/{registro_vuelo_id}/{idtripulante}', 'TripulanteController@QuitrarTripulante');
+//-------------------------------------------------------------------
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();

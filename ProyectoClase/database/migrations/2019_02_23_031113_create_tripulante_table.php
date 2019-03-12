@@ -16,6 +16,8 @@ class CreateTripulanteTable extends Migration
         Schema::create('tripulante', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('empleado_id')->unsigned();
+            $table->integer('cargo_id')->unsigned();
+            $table->integer('registro_vuelo_id')->unsigned();
             $table->timestamps();
         });
     }

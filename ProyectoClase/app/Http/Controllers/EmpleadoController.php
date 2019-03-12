@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Empleados;
 
 class EmpleadoController extends Controller
 {
@@ -82,5 +83,48 @@ class EmpleadoController extends Controller
         //
     }
 
+    public function MetodoCrearEmpleado($nombre, $telefono, $dpi, $telefonoemergencia, $fechanac){
+        $empleado = new Empleados();
+        $empleado->nombre = $nombre;
+        $empleado->telefono = $telefono;
+        $empleado->dpi = $dpi;
+        $empleado->telefonoemergencia = $telefonoemergencia;
+        $empleado->fechanac = $fechanac;
+        $empleado->save();
+        return $empleado;
+    }
+
+    public function VistaGuardarEmpleado(Request $request){
+        $Nombre =  $request->input('Nombre');
+        $Telefono =  $request->input('Telefono');
+        $Dpi =  $request->input('Dpi');
+        $TelefonoEmergencia =  $request->input('TelefonoEmergencia');
+        $FechaNac =  $request->input('FechaNac');
+        $this->MetodoCrearEmpleado($Nombre, $Telefono, $Dpi, $TelefonoEmergencia, $FechaNac  );
+        return redirect('ListarEmpleado');
+    }
+
+
+    public function VistaEliminarEmpleado($idEmpleado){
+        $this->MetodoEliminarEmpleado($idEmpleado);
+        return redirect('ListarEmpleado');
+    }
+
+    public function MetodoObtenerEmpleado($idEmpleado){
+        return Empleados::where('id',$idEmpleado)->first();
+    }
+
+    public function MetodoEliminarEmpleado($idEmpleado){
+        Empleados::where('id',$idEmpleado)->first()->delete();
+    }
+
+    public function VistaCrearEmpleado(){
+        return view('Empleado.CrearEmpleado');
+    }
+
+    public function VistaListarEmpleado(){
+        return view('Empleado.ListarEmpleado')
+            ->with('colleccion',Empleados::get());
+    }
 
 }
