@@ -54,6 +54,13 @@ Route::post('/QuitarReservacion/{registro_vuelo_id}','ReservacionController@Quit
 Route::get('/CrearBoletosAvion/{registro_vuelo_id}/{cantidad}','RegistroVueloController@GenerarBoletosAvion');
 //----------------------------------------------------------------
 
+//------------- Rutas Cargo ----------------------------
+Route::get('/CrearCargo', 'CargosController@VistaCrearCargo');
+Route::post('/CrearCargo', 'CargosController@VistaGuardarCargo');
+Route::get('/ListarCargos', 'CargosController@VistaListarCargo');
+Route::get('/ElminarCargo/{idCargo}', 'CargosController@VistaEliminarCargo');
+//-------------------------------------------------------
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
