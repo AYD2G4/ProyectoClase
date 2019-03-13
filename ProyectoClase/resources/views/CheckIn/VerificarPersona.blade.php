@@ -7,10 +7,10 @@
 					 CONFIRMACIÓN DEL PASAJERO
 				</p>
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <img src="{{URL::asset('/image/p1.jpg')}}" alt="profile Pic" height="200" width="200">
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-7">
                     <table class="table table-hover">
                         <thead>
                         <tr>
@@ -28,9 +28,12 @@
                         </tbody>
                     </table>
                     </div>
+                    <div class="col-sm-2">
+                        {!! QrCode::size(200)->generate($pasajero->dpi); !!}
+                    </div>
                 </div>
-				<a href="/estadoAviones"><button class="btn-success btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>AUTORIZAR</button></a>
-				<a href="/ListarRegistroVuelo"><button class="btn-danger btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>REPORTAR</button></a>
+				<a href="/checkin/buscarpersona"><button class="btn-success btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>AUTORIZAR</button></a>
+				<a href="/checkin/buscarpersona"><button class="btn-danger btn-raised btn-sm"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i>REPORTAR</button></a>
 			</center>
 </div>
 @endsection
