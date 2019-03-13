@@ -50,3 +50,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/************* RUTAS DEL CHECK IN DE PASAJEROS  */
+Route::get('/checkin/verificar/{idRegistroVuelo}','CheckInController@VerificarPasajero');
+Route::get('/checkin/buscarpersona','CheckInController@BuscarPasajero')->name('buscarPasajero');
+/*************************************   */
