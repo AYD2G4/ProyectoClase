@@ -48,7 +48,7 @@ class ControlVuelosTest extends TestCase
         $response = $this->get('/ControlDeVuelos');
         $response->assertSeeText('MENU CONTROL DE VUELOS');
     }
-    
+
     /**
     * Prueba para verificar que se puede ver el Estado de los aviones
     */
@@ -56,7 +56,7 @@ class ControlVuelosTest extends TestCase
         $response = $this->get('/estadoAviones');
         $response->assertSeeText('ESTADO DE AVIONES');
     }
-    
+
     /**
     * Prueba para verificar que se puede guardar nuevo registro de vuelo
     */
@@ -64,6 +64,6 @@ class ControlVuelosTest extends TestCase
         $response = $this->get('/registroDeVuelos');
         $response->assertSeeText('DEFINIR RUTA');
     }
-    
+
 
 }

@@ -12,9 +12,11 @@ class Boletos extends Migration
      * @return void
      */
     public function up()
-    {   
-        Schema::create('boleto', function (Blueprint $table) {
+    {
+        Schema::create('boletos', function (Blueprint $table) {
         $table->increments('id');
+        $table->integer('estado');
+        $table->integer('vuelo_id')->unsigned();
         $table->integer('registro_vuelo_id')->unsigned();//
         $table->timestamps();
     });
@@ -27,6 +29,6 @@ class Boletos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boleto');
+        Schema::dropIfExists('boletos');
     }
 }

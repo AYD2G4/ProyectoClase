@@ -26,6 +26,12 @@ INSERT INTO `registro_vuelo` (`id`, `fechasalida`, `horasalida`, `fechallegada`,
 INSERT INTO `registro_vuelo` (`id`, `fechasalida`, `horasalida`, `fechallegada`, `horallegada`, `vuelo`, `avion`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-17', '05:00:00', '2019-02-17', '10:00:00', '1', '2', '2019-02-16 00:00:00', '2019-02-16 00:00:00');
 INSERT INTO `registro_vuelo` (`id`, `fechasalida`, `horasalida`, `fechallegada`, `horallegada`, `vuelo`, `avion`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-17', '08:00:00', '2019-02-16', '11:00:00', '2', '3', '2019-02-16 00:00:00', '2019-02-16 00:00:00');
 
-INSERT INTO `reservacion` (`id`, `fechahora`, `estado`, `cliente_id`, `registrovuelo_id`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-15 00:00:00', '0', '1', '1', '2019-02-15 00:00:00', '2019-02-15 00:00:00');
-INSERT INTO `reservacion` (`id`, `fechahora`, `estado`, `cliente_id`, `registrovuelo_id`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-15 00:00:00', '0', '1', '2', '2019-02-15 00:00:00', '2019-02-15 00:00:00');
-INSERT INTO `reservacion` (`id`, `fechahora`, `estado`, `cliente_id`, `registrovuelo_id`, `created_at`, `updated_at`) VALUES (NULL, '2019-02-15 00:00:00', '0', '1', '3', '2019-02-15 00:00:00', '2019-02-15 00:00:00');
+INSERT INTO `empleado` (`id`, `nombre`, `telefono`, `dpi`, `telefonoemergencia`, `fechanac`, `created_at`, `updated_at`) VALUES
+(3, 'Elmer Real', '3055947675', 'ASDFG', '12345678', '2019-03-12', '2019-03-12 13:45:48', '2019-03-12 13:45:48'),
+(4, 'Empleado A', '12345678', 'asdfagdasga', '12345678', '2019-03-12', '2019-03-12 13:46:08', '2019-03-12 13:46:08'),
+(5, 'Empleado B', '12345678', 'ASDFG', '12345678', '2019-03-12', '2019-03-12 13:46:31', '2019-03-12 13:46:31');
+
+INSERT INTO `cargo` (`id`, `nombrecargo`, `created_at`, `updated_at`) VALUES
+(1, 'Piloto', '2019-03-12 13:54:30', '2019-03-12 13:54:30'),
+(2, 'Azafata', '2019-03-12 13:54:37', '2019-03-12 13:54:37'),
+(3, 'Ingeniero de navegacion', '2019-03-12 13:54:50', '2019-03-12 13:54:50');
