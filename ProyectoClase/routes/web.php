@@ -25,6 +25,10 @@ Route::post('/registroDeVuelos', 'ControlDeVuelosController@RegistroDeVuelosGuar
 Route::get('/PagoConTarjeta','PagoTarjetaController@ventana');
 Route::post('/PagoConTarjeta','PagoTarjetaController@ventanaGuardar');
 
+Route::get('/manejoDeHorarios','ManejoDeHorariosController@ManejoDeHorarios');
+Route::get('/manejoDeHorarios/{id}', 'ManejoDeHorariosController@Editar');
+Route::post('/manejoDeHorarios/{id}', 'ManejoDeHorariosController@EditarG');
+
 Auth::routes();
 
 

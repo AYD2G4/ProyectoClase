@@ -61,7 +61,7 @@ class ControlVuelosTest extends TestCase
     * Prueba para verificar que se puede guardar nuevo registro de vuelo
     */
     public function testRegistroVuelo(){
-        $response = $this->get('/definirRuta');
+        $response = $this->get('/registroDeVuelos');
         $response->assertSeeText('DEFINIR RUTA');
     }
     

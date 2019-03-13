@@ -28,7 +28,7 @@ class ControlVuelosTest extends TestCase
      * Prueba creada para probar si esta retornando correctamente la vista /definirRuta
      */
     public function testDefinirRuta(){
-        $response = $this->get('/definirRuta');
+        $response = $this->get('/registroDeVuelos');
         $this->assertEquals(200, $response->getStatusCode());
     }
 }
