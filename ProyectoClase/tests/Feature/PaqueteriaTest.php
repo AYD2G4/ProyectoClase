@@ -28,7 +28,7 @@ class PaqueteriaTest extends TestCase
     {
         $controller = new PaqueteriaController();
         $paquete=$controller->MetodoCrearPaquete(2,23,"Lacteos",23,12,23, "En espera");
-        $this->assertNull($paquete);
+        $this->assertNotNull($paquete);
         $paquete->delete();
     }
     /**
