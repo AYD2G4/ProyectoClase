@@ -25,6 +25,10 @@ class Llenado extends Migration
             DB::insert("insert into avion(capacidad,codigo,estado,marca) values  ('220','A7590','0','Avión comercial Airbus A320');");
             DB::insert("insert into avion(capacidad,codigo,estado,marca) values  ('220','A7595','0','Avión comercial Airbus A320');");
             
+
+
+
+            
             DB::insert("insert into vuelo(aeropuertosalida,aeropuertodestino) values  ('1','2');");
             DB::insert("insert into vuelo(aeropuertosalida,aeropuertodestino) values  ('2','1');");
             DB::insert("insert into vuelo(aeropuertosalida,aeropuertodestino) values  ('1','3');");
