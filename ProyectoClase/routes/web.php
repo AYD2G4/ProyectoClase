@@ -96,3 +96,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/checkin/verificar/{idRegistroVuelo}','CheckInController@VerificarPasajero');
 Route::get('/checkin/buscarpersona','CheckInController@BuscarPasajero')->name('buscarPasajero');
 /*************************************   */
+//------------- Rutas Paqueteria -----------------------------
+Route::get('/registroDePaquetes','PaqueteriaController@RegistrodePaquetes');
+Route::post('/registroDePaquetes','PaqueteriaController@RegistrodePaquetesGuardar');
+Route::get('/ListarPaquetes','PaqueteriaController@ListarPaquetes');
+
+Route::get('/paquetesaprobar/{paquete_id}', 'PaqueteriaController@PaquetesAprobar');
+Route::get('/paquetescancelar/{paquete_id}', 'PaqueteriaController@PaquetesCancelar');
+Route::get('/paquetesesperar/{paquete_id}', 'PaqueteriaController@PaquetesEsperar');
+Route::get('/paquetesperdido/{paquete_id}', 'PaqueteriaController@PaquetesPerdido');
+Route::get('/paqueteseliminar/{paquete_id}', 'PaqueteriaController@PaquetesEliminar');
