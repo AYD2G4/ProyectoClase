@@ -7,7 +7,7 @@ use App\Reservacion;
 use App\DetalleCompraAux;
 use App\Boleto;
 use App\Registro_Vuelo;
-use App\ObjetoregistroVuelo;
+use App\ObjetoRegistroVuelo;
 use App\Vuelo;
 use App\Aeropuerto;
 use App\Http\Controllers\RegistroVueloController;
