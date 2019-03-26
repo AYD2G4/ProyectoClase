@@ -15,7 +15,7 @@ RUN chmod -R +777 /var/www/html/ProyectoClase
 
 
 CMD ["apachectl", "-D", "FOREGROUND"]
-ENTRYPOINT cd /var/www/html/ProyectoClase/ProyectoClase/ && yes | php artisan migrate:refresh
+#ENTRYPOINT cd /var/www/html/ProyectoClase/ProyectoClase/ && yes | php artisan migrate:refresh
 
 
 
