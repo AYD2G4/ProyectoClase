@@ -4,7 +4,6 @@ RUN git clone https://github.com/AYD2G4/ProyectoClase.git /var/www/html/Proyecto
 RUN rsync -a -v --ignore-existing /var/www/laravel/* /var/www/html/ProyectoClase/ProyectoClase
 RUN cp /var/www/html/ProyectoClase/ProyectoClase/.env.example /var/www/html/ProyectoClase/ProyectoClase/.env
 RUN cd /var/www/html/ProyectoClase/ProyectoClase/ && yes | composer install && yes | php artisan key:generate
-RUN cd /var/www/html/ProyectoClase/ProyectoClase/ && yes | php artisan migrate:refresh
 RUN chmod -R +777 /var/www/html/ProyectoClase
 
 #####RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
@@ -16,8 +15,7 @@ RUN chmod -R +777 /var/www/html/ProyectoClase
 
 
 CMD ["apachectl", "-D", "FOREGROUND"]
-
-#ENTRYPOINT cd /var/www/html/ProyectoClase/ProyectoClase/ && yes | php artisan migrate:refresh && php artisan serve --host=0.0.0.0 --port=8000
+ENTRYPOINT cd /var/www/html/ProyectoClase/ProyectoClase/ && yes | php artisan migrate:refresh
 
 
 
