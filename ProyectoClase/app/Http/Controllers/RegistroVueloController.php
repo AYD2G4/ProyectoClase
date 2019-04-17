@@ -105,25 +105,34 @@ class RegistroVueloController extends Controller
     }
 
     public function CrearBoleto($registro_vuelo_id){
-        $boleto = new Boleto();
+       /* $boleto = new Boleto();
         $boleto->estado = 0;
         $registroVuelo = Registro_Vuelo::where('id',$registro_vuelo_id)->first();
         $boleto->vuelo_id  = $registroVuelo->vuelo;
         $boleto->registro_vuelo_id = $registro_vuelo_id;
-        $boleto->save();
+        $boleto->save();*/
+
+     $registroVuelo=DB::table('registro_vuelo as c')
+     ->where('c.id', '=' , $registro_vuelo_id)->first();
+
+        $boleto = DB::table('boletos')->insertGetId(
+            [ 'estado'=> 0,
+            'vuelo_id' => $registroVuelo->vuelo,
+            'registro_vuelo_id' =>  $registro_vuelo_id ]
+        );
         return $boleto;
     }
     public function ObtenerBoleto($idBoleto){
       //  $boleto =Boleto::where('id', $idBoleto)->first();
       $boleto = DB::table('boletos')
       ->where('c.id', '=', $idBoleto)->first();
-
         return $boleto;
     }
     public function EditarEstadoBoleto($idBoleto,$estado){
         $boleto =Boleto::where('id', $idBoleto)->first();
         $boleto->estado  = $estado;
         $boleto->save();
+
         return $boleto;
     }
 
