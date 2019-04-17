@@ -11,6 +11,7 @@ use App\Vuelo;
 use App\Aeropuerto;
 use App\Http\Controllers\RegistroVueloController;
 use App\Http\Controllers\DetalleCompraAuxiliarController;
+use DB;
 
 class RegistroVueloController extends Controller
 {
@@ -91,13 +92,15 @@ class RegistroVueloController extends Controller
     }
     public function ListarRegistroVuelo()
     {
-        $reservaciones = Registro_Vuelo::get();
-        return view('Vuelo.RegistroVuelo')->with('reservaciones', $reservaciones);
+      //  $reservaciones = Registro_Vuelo::get();
+          $reservaciones = DB::table('registro_vuelo') ->get();
+      return view('Vuelo.RegistroVuelo')->with('reservaciones', $reservaciones);
     }
 
     public function DisponibilidadRegistroVuelo()
     {
-        $reservaciones = Registro_Vuelo::get();
+      //  $reservaciones = Registro_Vuelo::get();
+        $reservaciones = DB::table('registro_vuelo') ->get();
         return view('Vuelo.RegistroVuelo')->with('BoletosRestantes', $reservaciones);
     }
 
@@ -111,7 +114,10 @@ class RegistroVueloController extends Controller
         return $boleto;
     }
     public function ObtenerBoleto($idBoleto){
-        $boleto =Boleto::where('id', $idBoleto)->first();
+      //  $boleto =Boleto::where('id', $idBoleto)->first();
+      $boleto = DB::table('boletos')
+      ->where('c.id', '=', $idBoleto)->first();
+
         return $boleto;
     }
     public function EditarEstadoBoleto($idBoleto,$estado){

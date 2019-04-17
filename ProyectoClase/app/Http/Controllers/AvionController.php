@@ -9,7 +9,7 @@ use DB;
 class AvionController extends Controller
 {
     public function MetodoCrearAvion($capacidad, $codigo, $estado, $marca){
-        DB::insert('insert into avion (capacidad, codigo,estado, marca) values (?, ?, ?, ?)', [$capacidad,  $codigo, $estado, $marca]);
+        $avion = DB::insert('insert into avion (capacidad, codigo,estado, marca) values (?, ?, ?, ?)', [$capacidad,  $codigo, $estado, $marca]);
         return $avion;
     }
 
@@ -24,12 +24,8 @@ class AvionController extends Controller
     }
 
     public function MetodoEliminarAvion($idAvion){
-        Avion::where('id',$idAvion)->first()->delete();
         $aviones=DB::table('avion as c')
-        ->where('c.id', 'LIKE', '%'.$idAvion.'%')
-        ->select('c.capacidad as capacidad', 'c.codigo as codigo', 'c.estado as estado',
-                'c.marca as marca')
-        ->delete();
+        ->where('c.id', '=', $idAvion)->delete();
     }
 
     public function MetodoObtenerAvion($idAvion){
@@ -43,8 +39,7 @@ class AvionController extends Controller
 
     public function VistaListarAvion(){
         $aviones=DB::table('avion as c')
-        ->where('c.id', 'LIKE', '%'.$idAvion.'%')
-        ->select('c.capacidad as capacidad', 'c.codigo as codigo', 'c.estado as estado',
+        ->select('c.id as id','c.capacidad as capacidad', 'c.codigo as codigo', 'c.estado as estado',
                 'c.marca as marca')
                 ->get();
         return view('Avion.ListarAvion')

@@ -117,6 +117,7 @@ class DetalleCompraAuxiliarController extends Controller
     public function ListarCompras()
     {
         $DetalleCompraAuxX =DetalleCompraAux::where('cliente_id', '1')->get()->pluck('registro_vuelo_id');
+
         $registrosVuelos = Registro_Vuelo::whereIn('id',$DetalleCompraAuxX)->get();
         $colleccion = new Collection();
         foreach($registrosVuelos as $reg){
