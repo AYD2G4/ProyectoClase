@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: aydusacg4/p1_g4:Version6
+    image: aydusacg4/p1_g4:version69
     build: .
     container_name: apache_web
     restart: unless-stopped

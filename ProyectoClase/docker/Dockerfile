@@ -1,4 +1,4 @@
-FROM aydusacg4/p1_g4:Version6
+FROM aydusacg4/p1_g4:version69
 RUN rm -rf /var/www/html/ProyectoClase/
 RUN git clone https://github.com/AYD2G4/ProyectoClase.git /var/www/html/ProyectoClase
 RUN rsync -a -v --ignore-existing /var/www/laravel/* /var/www/html/ProyectoClase/ProyectoClase
