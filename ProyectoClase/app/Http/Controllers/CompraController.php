@@ -9,7 +9,7 @@ use App\Boleto;
 use App\Registro_Vuelo;
 use App\Vuelo;
 use App\Compra;
-use App\ObjetoregistroVuelo;
+use App\ObjetoRegistroVuelo;
 use App\Aeropuerto;
 use App\Http\Controllers\RegistroVueloController;
 use App\Http\Controllers\ReservacionController;
