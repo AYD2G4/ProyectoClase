@@ -151,7 +151,7 @@ class ReservacionController extends Controller
             $boleto->save();
             $this->QuitarReservacion($boleto->id);
         }
-        $this->MetodoQuitarReservacion($idReservacion);
+        //$this->MetodoQuitarReservacion($idReservacion);
         return redirect('VerReservaciones');
     }
 

@@ -25,7 +25,7 @@ class AvionController extends Controller
 
     public function MetodoEliminarAvion($idAvion){
         $aviones=DB::table('avion')
-        ->where('c.id',$idAvion)->delete();
+        ->where('id',$idAvion)->delete();
     }
 
     public function MetodoObtenerAvion($idAvion){
